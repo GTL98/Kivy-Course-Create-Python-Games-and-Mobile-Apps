@@ -1,0 +1,53 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+        disabled: not root.contador_ativado
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1
+
+    Switch:
+        id: meu_switch
+        size_hint: None, 1
+        width: '100dp'
+
+        # "active" como True informa que quando
+        # a aplicação começar o switch deverá
+        # estar ativado
+        active: True
+
+        # Usando o "id" não é mais necessário  que
+        # usemos uma função no arquivo .py
+        #on_active: root.switch_ativado(self)
+
+    Slider:
+        id: meu_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: 'vertical'
+
+        # Usando o "id" podemos usar chamar a
+        # propriedade sem utilizar a lógica no
+        # arquivo .py
+        disabled: not meu_switch.active
+
+    Label:
+        text: str(int(meu_slider.value))
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.3, 0.7, 1

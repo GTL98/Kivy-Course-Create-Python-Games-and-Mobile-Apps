@@ -1,0 +1,49 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+        disabled: not root.contador_ativado
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1
+
+    Switch:
+        id: meu_switch
+        size_hint: None, 1
+        width: '100dp'
+        active: True
+
+    Slider:
+        id: meu_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: 'vertical'
+        disabled: not meu_switch.active
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: str(int(meu_slider.value))
+            font_name: 'fonts/Lcd.ttf'
+            font_size: '80dp'
+            color: 1, 0.3, 0.7, 1
+        ProgressBar:
+            # Informar o valor máximo
+            # O valor mínimo é sempre 0, impossível
+            # de mudar
+            max: 100
+            value: meu_slider.value

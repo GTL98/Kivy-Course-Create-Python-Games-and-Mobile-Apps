@@ -1,0 +1,19 @@
+ExemploAnchorLayout:
+
+<ExemploAnchorLayout>:
+    # Posição dos widgets na tela no eixo X
+    # right, left, center
+    anchor_x: 'center'
+
+    # Posição dos widgets na tela no eixo Y
+    # bottom, top, center
+    anchor_y: 'top'
+
+    # Para ter 2 botões ou mais em um AnchorLayout,
+    # devemos colocá-los em um BoxLayout
+    BoxLayout:
+        size_hint: 0.2, 0.2
+        Button:
+            text: 'A'
+        Button:
+            text: 'B'

@@ -1,0 +1,26 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+
+        # Por padrão, "disabled" é False, ou seja,
+        # pode ser clicado direto. Para deixar o
+        # botão desablitado no começo, basta
+        # informar True para "disabled"
+        disabled: not root.contador_ativado
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1

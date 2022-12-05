@@ -1,0 +1,47 @@
+ExemploGridLayout:
+
+# O '@' serve para indicar qual classe será usada
+# para a hierarquia. Não precisa importar e informar
+# no documento .py
+<ExemploGridLayout@GridLayout>:
+    # Essa classe precisa de duas coisas:
+        # Número de linhas e de colunas
+    cols: 3
+    rows: 2
+    Button:
+        text: 'A'
+        size_hint: None, 1
+        width: '60dp'
+    # Podemos colocar um layout pronto
+    ExemploBoxLayout
+    Button:
+        text: 'C'
+    Button:
+        text: 'D'
+        size_hint: None, 1
+        width: '60dp'
+    Button:
+        text: 'E'
+    Button:
+        text: 'F'
+
+<ExemploBoxLayout>:
+    orientation: 'horizontal'
+    Button:
+        text: 'A'
+        size_hint: 0.5, 0.5
+        pos_hint: {'center_y': 0.5}
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '10dp'
+        Button:
+            text: 'B1'
+        Button:
+            text: 'B2'
+        Button:
+            text: 'B3'
+        Button:
+            text: 'B4'
+    Label:
+        text: 'C'

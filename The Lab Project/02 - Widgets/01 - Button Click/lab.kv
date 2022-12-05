@@ -1,0 +1,15 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    Button:
+        text: 'Clique Aqui'
+        # Usar ".root" informa que a função é para
+        # ser usada na classe
+        # Usar ".self" informa que a função é para
+        # ser usada no widget
+        on_press: root.clique_botao()
+
+    Label:
+        text: root.meu_texto

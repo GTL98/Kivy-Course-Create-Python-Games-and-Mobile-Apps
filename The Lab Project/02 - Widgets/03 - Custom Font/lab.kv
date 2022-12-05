@@ -1,0 +1,25 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+
+    Label:
+        text: root.meu_texto
+
+        # Para adicionar uma fonte diferente da
+        # padrão basta informar qual é pelo
+        # "font_name"
+        font_name: 'fonts/Lcd.ttf'
+
+        # Para aumentar o tamanho da fonte basta
+        # usar o "font_size"
+        font_size: '80dp'
+
+        # Para mudar a cor basta informar ao
+        # "color" o rgba, mas sempre em porcentagem
+        # os valores devem estar entre 0 e 1
+        color: 1, 0.5, 1, 1

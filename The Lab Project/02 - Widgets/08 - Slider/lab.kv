@@ -1,0 +1,43 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+        disabled: not root.contador_ativado
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1
+
+    Switch:
+        size_hint: None, 1
+        width: '100dp'
+        on_active: root.switch_ativado(self)
+
+    Slider:
+        # Determinar o valor mínimo e máximo
+        min: 0
+        max: 100
+
+        # "value" determinar o valor padrão do
+        # quando slider a aplicação é iniciada
+        value: 50
+
+        # O slider pode ficar na horizontal (padrão)
+        # ou na vertical
+        orientation: 'vertical'
+
+        # Obter o valor do slider a cada iteração
+        # Para isso usaremos o "on_value"
+        on_value: root.obter_valor_slider(self)

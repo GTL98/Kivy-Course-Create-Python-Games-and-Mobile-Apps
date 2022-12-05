@@ -1,0 +1,27 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    # O Toggle Button funciona como um botão normal
+    # mas se parece mais com um interruptor, podendo
+    # selecionar somente uma opção
+    ToggleButton:
+        text: 'OFF'
+
+        # Para atribuir comportamento a esse botão,
+        # devemos passar "on_state" ao invés de
+        # "on_press"
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1

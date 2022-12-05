@@ -1,0 +1,49 @@
+ExemploWidgets:
+
+<ExemploWidgets>:
+    cols: 3
+
+    ToggleButton:
+        text: 'OFF'
+        on_state: root.estado_botao_toggle(self)
+        size_hint: None, 1
+        width: '100dp'
+
+    Button:
+        text: 'Contador'
+        on_press: root.clique_botao()
+        disabled: not root.contador_ativado
+
+    Label:
+        text: root.meu_texto
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.5, 1, 1
+
+    Switch:
+        size_hint: None, 1
+        width: '100dp'
+        on_active: root.switch_ativado(self)
+
+    Slider:
+        # A utilização do "id" permite utilizar
+        # os widgets em outros widgets de um modo
+        # mais fácil, simples, seguro e legível
+        id: meu_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: 'vertical'
+        # Usando o "id" não é mais necessário usar
+        # o "on_value"
+        #on_value: root.obter_valor_slider(self)
+
+    Label:
+        # Usar o "id" permite que usemos as
+        # propriedades de diversos widgets sem
+        # precisar desenvolver a lógica no
+        # aquivo .py
+        text: str(int(meu_slider.value))
+        font_name: 'fonts/Lcd.ttf'
+        font_size: '80dp'
+        color: 1, 0.3, 0.7, 1

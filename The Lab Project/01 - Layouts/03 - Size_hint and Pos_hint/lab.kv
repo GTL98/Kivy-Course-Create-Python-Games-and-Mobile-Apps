@@ -1,0 +1,23 @@
+ExemploBoxLayout:
+
+<ExemploBoxLayout>:
+    orientation: 'horizontal'
+    Button:
+        text: 'A'
+
+        # Tamanho que é dinâmico (sempre em porcentagem)
+        size_hint: 0.5, 0.5  # None, None para deixar um tamanho fixo
+
+        # Posição do widget na tela (sempre em porcentagem)
+        # Horizontal: x, center_x, right
+        # Vertical: y, center_y, top
+        pos_hint: {'center_y': 0.5}
+
+        # Tamanho não dinâmico
+        #size: '100dp', '60dp'  # informar o tamanho fixo quando "size_hint: None, None"
+        #width: '100dp'
+        #height: '60dp'
+    Button:
+        text: 'B'
+    Label:
+        text: 'C'
