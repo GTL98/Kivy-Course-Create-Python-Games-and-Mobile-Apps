@@ -1,0 +1,20 @@
+ExemploCanvas:
+
+# Podemos declarar variáveis globais
+#:set t dp(150) # sempre um 'int', não pode ser 'str' (ex: '100dp')
+
+<ExemploCanvas>:
+    # Canvas é a uma tela que podemos desenhar
+    canvas:
+        # Desenhar um retângulo
+        Rectangle:
+            # Alterar a posição do retângulo
+            pos: self.center_x-t/2, self.center_y-t/2
+
+            # Alterar o tamanho do retângulo
+            size: t, t
+
+        # Desenhar um círculo
+        Ellipse:
+            pos: 100, 250
+            size: t, t/2
