@@ -1,0 +1,23 @@
+#:import menu menu
+
+WidgetPrincipal:
+
+<WidgetPrincipal>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: 'images/bg1.jpg'
+
+    menu_widget: menu_widget
+    ponto_perspectiva_x: self.width/2
+    ponto_perspectiva_y: self.height*0.75
+
+    MenuWidget:
+        id: menu_widget
+
+    Label:
+        text: root.pontuacao_txt
+        font_size: dp(20)
+        font_name: 'fonts/Eurostile.ttf'
+        size_hint: 0.2, 0.2
+        pos_hint: {'x': 0, 'top': 1}
